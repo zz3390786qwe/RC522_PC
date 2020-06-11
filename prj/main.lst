@@ -96,26 +96,28 @@ line level    source
   84          
   85          void main(void)
   86          {
-  87   1          if((PCON&0x10)==0) //���POFλ=0
+  87   1          if((PCON&0x10)==0) //如果POF位=0
   88   1          {
-  89   2             PCON=PCON|0x10;  //��POFλ��1
-  90   2             IAP_CONTR=0x60;  //����λ,��ISP���������
+  89   2             PCON=PCON|0x10;  //将POF位置1
+  90   2             IAP_CONTR=0x60;  //软复位,从ISP监控区启动
   91   2          }
   92   1          else
   93   1          {
-  94   2             PCON=PCON&0xef;  //��POFλ����
+  94   2             PCON=PCON&0xef;  //将POF位清零
   95   2          }
   96   1      
   97   1          lcdInitinal();
-  98   1          lcdMsg("����ҽҩ",2,2);
-  99   1          lcdMsg("www.baidu.com",4,1);
+  98   1          lcdMsg("张振的乔度胧?,1,0);
+                  lcdMsg("哈哈哈哈",2,0);
+	                lcdMsg("终于烧进去了",3,0);
+                  lcdMsg("www.zcmu.edu.cn",4,0);
  100   1          delay_ms(2000);
  101   1          lcdInitinal();
  102   1          delay_ms(2);
- 103   1          lcdMsg("��----",4,0);
- 104   1          lcdMsg("���ţ�----",2,0);
- 105   1          lcdMsg("���ѣ�----",3,0);
- 106   1          lcdMsg("״̬��----",1,0);
+ 103   1          lcdMsg("余额：----",4,0);
+ 104   1          lcdMsg("卡号：----",2,0);
+ 105   1          lcdMsg("消费：----",3,0);
+ 106   1          lcdMsg("状态：----",1,0);
  107   1      
  108   1          init_all();
  109   1      
